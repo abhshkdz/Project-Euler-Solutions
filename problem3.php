@@ -1,21 +1,21 @@
 <?php
 
-function prime($a)
-{
-    if ($a<2) return FALSE;
-    for ($i=2; $i<=sqrt($a); $i++)
-		if ($a%$i==0) return FALSE;
-	return TRUE;
-}
+$num=600851475143;
+$f=2;
+$flag=0;
 
-for ($i=3; $i<10000; $i+=2)
+while ($flag==0)
 {
-	if (prime($i) && 600851475143%$i==0)
+	if ($num%$f==0)
 	{
-		$a=$i;
+		if (($num/$f)==1) $flag=1;
+		else $num/=$f;
+	}
+	else 
+	{			
+		$f++;
 	}
 }
-
-echo $a;
+echo $f;
 
 ?>
