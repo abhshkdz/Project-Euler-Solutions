@@ -1,6 +1,6 @@
 <?php
-
 	//Sieve
+	//time = 0.75s
 	function primeSieve ($n) {
 		$b = ($n-1)/2;
 		$p = array_fill(1, $b, 0);
@@ -22,11 +22,12 @@
 		return $s;
 	}
 
-	echo sumSieve(2000000); // time 0.75s
+	echo sumSieve(2000000);
 
 
 
 	//Bruteforce method
+	//time = 5.16s
 	/*
 	function isPrime($n) {
 		if ($n < 5) 
@@ -53,7 +54,7 @@
 		return $s;
 	}
 
-	echo sumPrimes(2000000); // time 5.16s
+	echo sumPrimes(2000000); 
 	*/
 
 ?>
