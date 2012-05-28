@@ -2,22 +2,22 @@
 	//Sieve
 	//time = 0.75s
 	function primeSieve ($n) {
-		$b = ($n-1)/2;
-		$p = array_fill(1, $b, 0);
+		$k = ($n-1)/2;
+		$a = array_fill(1, $k, 0);
 		$c = (floor(sqrt($n))-1)/2;
 		for ($i = 1; $i <= $c; $i++) 
-			if (!$p[$i]) 
-				for ($j = 2*$i*($i+1); $j <= $b; $j += 2*$i+1) 
-					$p[$j] = 1;
-		return $p;
+			if (!$a[$i]) 
+				for ($j = 2*$i*($i+1); $j <= $k; $j += 2*$i+1) 
+					$a[$j] = 1;
+		return $a;
 
 	}
 
 	function sumSieve($n)
 	{
-		$b = count($p = primeSieve($n));
-		for ($i = 1, $s = 2; $i <= $b; $i++)
-			if (!$p[$i]) 
+		$k = count($a = primeSieve($n));
+		for ($i = 1, $s = 2; $i <= $k; $i++)
+			if (!$a[$i]) 
 				$s += (2*$i+1);
 		return $s;
 	}
